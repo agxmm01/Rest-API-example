@@ -1,0 +1,37 @@
+package com.agam.rest_example.Controller;
+
+import com.agam.rest_example.Model.Student;
+import com.agam.rest_example.Service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/students")
+public class StudentController {
+    @Autowired
+    private StudentService service;
+
+    @GetMapping("/get-all")
+    public List<Student> getStudents() {
+        return service.getAllStudents();
+    }
+
+    @GetMapping("/{id}")
+    public Student getStudentById(@PathVariable int id) {
+        return service.getStudentById(id);
+    }
+
+    @PostMapping("/add-student")
+    public Student addStudent(@RequestBody Student student) {
+        return service.saveStudent(student);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<HttpStatus> deleteStudent(@PathVariable int id) {
+        return service.deleteStudentById(id);
+    }
+}
