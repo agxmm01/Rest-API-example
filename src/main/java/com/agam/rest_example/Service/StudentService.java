@@ -32,4 +32,13 @@ public class StudentService {
         repository.deleteById(id);
         return ResponseEntity.ok().build();
     }
+
+    public ResponseEntity<Student> updateStudent(int id , Student student) {
+        Student existingStudent = repository.findStudentById(id).orElseThrow(() ->
+                new RuntimeException("No student exist with this id"));
+        existingStudent.setName(student.getName());
+        existingStudent.setCourse(student.getCourse());
+        repository.save(existingStudent);
+        return ResponseEntity.ok().body(existingStudent);
+    }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/students")
 public class StudentController {
     @Autowired
     private StudentService service;
@@ -33,5 +33,10 @@ public class StudentController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> deleteStudent(@PathVariable int id) {
         return service.deleteStudentById(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable int id, @RequestBody Student student) {
+        return service.updateStudent(id,student);
     }
 }
