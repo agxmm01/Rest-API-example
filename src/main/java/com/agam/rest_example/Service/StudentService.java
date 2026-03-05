@@ -35,7 +35,7 @@ public class StudentService {
 
     public ResponseEntity<Student> updateStudent(int id , Student student) {
         Student existingStudent = repository.findStudentById(id).orElseThrow(() ->
-                new RuntimeException("No student exist with this id"));  // Use any exception for your benefit but you need to handle it
+                new RuntimeException("No student exist with this id"));  // Use any exception for your understanding, but you need to handle it
         // as we are using Optional<T> in Repository so exception handling is must.
         existingStudent.setName(student.getName());
         existingStudent.setCourse(student.getCourse());
