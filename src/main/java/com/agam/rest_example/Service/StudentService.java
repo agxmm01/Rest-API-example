@@ -42,4 +42,17 @@ public class StudentService {
         repository.save(existingStudent);
         return ResponseEntity.ok().body(existingStudent);
     }
+
+    /*
+    public ResponseEntity<Student> updateStudent(int id, Student student) {
+    return repository.findById(id)
+            .map(existingStudent -> {
+                existingStudent.setName(student.getName());
+                existingStudent.setCourse(student.getCourse());
+                repository.save(existingStudent);
+                return ResponseEntity.ok(existingStudent);
+            })
+            .orElseGet(() -> ResponseEntity.notFound().build());
+}
+    * */
 }
