@@ -2,7 +2,9 @@ package com.agam.rest_example.Service;
 
 import com.agam.rest_example.Model.Student;
 import com.agam.rest_example.Repository.StudentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -10,9 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class StudentService {
 
-    @Autowired
     private StudentRepository repository;
 
     public List<Student> getAllStudents() {
@@ -23,9 +25,8 @@ public class StudentService {
         return repository.save(student);
     }
 
-    @SuppressWarnings("deprecation")
     public Student getStudentById(int id) {
-        return repository.getById(id);
+        return repository.findById(id).orElseThrow(() -> new RuntimeException("Student not found"));
     }
 
     public ResponseEntity<HttpStatus> deleteStudentById(int id) {

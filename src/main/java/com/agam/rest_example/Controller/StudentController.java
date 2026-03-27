@@ -2,7 +2,9 @@ package com.agam.rest_example.Controller;
 
 import com.agam.rest_example.Model.Student;
 import com.agam.rest_example.Service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.RequiredArgsConstructor;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +13,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/students")
+@RequiredArgsConstructor
 public class StudentController {
-    @Autowired
-    private StudentService service;
+
+    private final StudentService service;
 
     @GetMapping("/get-all")
     public List<Student> getStudents() {
