@@ -49,7 +49,16 @@ A typical Spring Boot REST API project looks like this:
     └── Application.java # Main application
 
 ------------------------------------------------------------------------
+## Screenshots
+<img width="1440" height="900" alt="Screenshot 2026-03-27 at 9 42 34 AM" src="https://github.com/user-attachments/assets/7a94fb7b-51f4-406c-85b6-ea54517e3917" />
+<img width="1440" height="900" alt="Screenshot 2026-03-27 at 9 47 38 AM" src="https://github.com/user-attachments/assets/9db81b70-8533-4728-ad0f-d728199b020c" />
+<img width="1440" height="900" alt="Screenshot 2026-03-27 at 9 48 02 AM" src="https://github.com/user-attachments/assets/88fbee55-95a9-4ad6-8405-1ca0503623d9" />
+<img width="1440" height="900" alt="Screenshot 2026-03-27 at 9 51 03 AM" src="https://github.com/user-attachments/assets/385a9243-aedb-4a43-a7cd-b8dc59e6af4f" />
+<img width="1440" height="900" alt="Screenshot 2026-03-27 at 9 52 00 AM" src="https://github.com/user-attachments/assets/d7446527-3d57-4640-8399-8b2632d229cf" />
+<img width="1440" height="900" alt="Screenshot 2026-03-27 at 9 52 44 AM" src="https://github.com/user-attachments/assets/bed14343-14eb-4832-a1b3-0d7c6ba1458b" />
 
+
+------------------------------------------------------------------------
 ## 🛠️ How to Run the Project
 
 ### 1️⃣ Clone the repository
